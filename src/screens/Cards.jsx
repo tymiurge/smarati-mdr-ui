@@ -14,6 +14,8 @@ import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardS
 import Danger from "components/Typography/Danger.jsx";
 import Warning from "@material-ui/icons/Warning";
 
+import { MemoCard } from "./../controls";
+
 class Cards extends React.Component {
   static propTypes = {
     classes: PropTypes.object.isRequired
@@ -46,6 +48,7 @@ class Cards extends React.Component {
                 </div>
               </CardFooter>
             </Card>
+            <MemoCard />
           </GridItem>
         </GridContainer>
       </div>

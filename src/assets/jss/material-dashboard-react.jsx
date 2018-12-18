@@ -162,6 +162,13 @@ const cardTitle = {
   }
 };
 
+const drownedCardTitle = {
+  ...title,
+  marginTop: "40px",
+  marginBottom: "3px",
+  minHeight: "auto"
+};
+
 const cardSubtitle = {
   marginTop: "-.375rem"
 };
@@ -205,5 +212,7 @@ export {
   title,
   cardTitle,
   cardSubtitle,
-  cardLink
+  cardLink,
+  // custom
+  drownedCardTitle
 };
