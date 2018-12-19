@@ -71,6 +71,10 @@ const dashboardStyle = {
       fontWeight: "400",
       lineHeight: "1"
     }
+  },
+  noMinWidth: {
+    //minWidth: "unset !important"
+    padding: "20px"
   }
 };
 

@@ -1,20 +1,26 @@
 import React from "react";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardIcon from "components/Card/CardIcon.jsx";
-//import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
-import Icon from "@material-ui/core/Icon";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
+import { MemoCard, MemoCardsBox, CardsGrid } from "./../controls";
 
-import Danger from "components/Typography/Danger.jsx";
-import Warning from "@material-ui/icons/Warning";
-
-import { MemoCard } from "./../controls";
+const cardsData = [
+  { id: 1, type: "box", content: "English 100 words", progress: 75 },
+  { id: 2, type: "box", content: "Waiting For Godoth", progress: 43 },
+  { id: 3, type: "box", content: "Linux commands", progress: 67 },
+  { id: 4, type: "box", content: "Docker commands", progress: 34 },
+  { id: 5, type: "box", content: "Spanish 100 words", progress: 2 },
+  { id: 6, type: "box", content: "Spanish 1000 words", progress: 24 },
+  { id: 7, type: "box", content: "Kubernetes commands", progress: 45 },
+  { id: 8, type: "box", content: "English proverbs", progress: 45 },
+  { id: 9, type: "box", content: "Spanish proverbs", progress: 39 },
+  { id: 10, type: "box", content: "The door into the summer", progress: 88 },
+  { id: 11, type: "card", content: "go", progress: 7 },
+  { id: 12, type: "card", content: "move", progress: 7 },
+  { id: 14, type: "card", content: "move", progress: 7 }
+];
 
 class Cards extends React.Component {
   static propTypes = {
@@ -22,37 +28,7 @@ class Cards extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-    return (
-      <div>
-        <GridContainer>
-          <GridItem xs={12} sm={6} md={3}>
-            <Card onClick={() => alert("card clicked")}>
-              <CardHeader color="warning" stats icon>
-                <CardIcon color="warning">
-                  <Icon>content_copy</Icon>
-                </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
-                <h3 className={classes.cardTitle}>
-                  49/50 <small>GB</small>
-                </h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.stats}>
-                  <Danger>
-                    <Warning />
-                  </Danger>
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Get more space
-                  </a>
-                </div>
-              </CardFooter>
-            </Card>
-            <MemoCard />
-          </GridItem>
-        </GridContainer>
-      </div>
-    );
+    return <CardsGrid items={cardsData} />;
   }
 }
 

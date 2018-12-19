@@ -179,6 +179,10 @@ const cardLink = {
   }
 };
 
+const noMinWidth = {
+  minWidth: "unset !important"
+};
+
 export {
   //variables
   drawerWidth,
@@ -214,5 +218,6 @@ export {
   cardSubtitle,
   cardLink,
   // custom
-  drownedCardTitle
+  drownedCardTitle,
+  noMinWidth
 };
