@@ -1,29 +1,44 @@
 import React from "react";
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardIcon from "components/Card/CardIcon.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import Danger from "components/Typography/Danger.jsx";
-import Warning from "@material-ui/icons/Warning";
-import Icon from "@material-ui/core/Icon";
+import SnackbarContent from "@material-ui/core/SnackbarContent";
+import Note from "@material-ui/icons/Note";
+//import CloseIcon from "@material-ui/icons/Close";
 import withStyles from "@material-ui/core/styles/withStyles";
-import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
-import PropTypes from "prop-types";
+import classNames from "classnames";
 
-const propTypes = {
-  classes: PropTypes.object.isRequired
-};
+const styles1 = () => ({
+  icon: {
+    fontSize: 20,
+    marginRight: "6px"
+  },
+  message: {
+    display: "flex",
+    alignItems: "center"
+  },
+  noMinWidth: {
+    minWidth: "unset",
+    paddingLeft: "12px",
+    borderRadius: "0px"
+  }
+});
 
-const MemoCard = props => {
-  const { classes } = props;
+const MemoBox = props => {
+  const { classes, className, content, ...other } = props;
   return (
-    <Card>
-      <CardBody>Virtualization</CardBody>
-    </Card>
+    <div>
+      <div style={{ height: "2px", backgroundColor: "#00acc1" }} />
+      <SnackbarContent
+        className={classNames(className, classes.noMinWidth)}
+        aria-describedby="client-snackbar"
+        message={
+          <span className={classes.message}>
+            <Note className={classNames(classes.icon)} />
+            {content}
+          </span>
+        }
+        {...other}
+      />
+    </div>
   );
 };
 
-MemoCard.propTypes = propTypes;
-
-export default withStyles(dashboardStyle)(MemoCard);
+export default withStyles(styles1)(MemoBox);

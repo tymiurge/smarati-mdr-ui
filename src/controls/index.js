@@ -1,3 +1,4 @@
 import MemoCard from "./MemoCard";
+import MemoCardsBox from "./MemoCardsBox";
 
-export { MemoCard };
+export { MemoCard, MemoCardsBox };
