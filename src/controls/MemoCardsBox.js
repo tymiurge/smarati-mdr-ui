@@ -1,11 +1,13 @@
 import React from "react";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
-import Note from "@material-ui/icons/Note";
-//import CloseIcon from "@material-ui/icons/Close";
+import FolderIcon from "@material-ui/icons/Folder";
 import withStyles from "@material-ui/core/styles/withStyles";
 import classNames from "classnames";
 
 const styles1 = () => ({
+  info: {
+    backgroundColor: "#00acc1"
+  },
   icon: {
     fontSize: 26,
     marginRight: "6px"
@@ -18,20 +20,23 @@ const styles1 = () => ({
     minWidth: "unset",
     paddingLeft: "12px",
     borderRadius: "0px"
+  },
+  cardProgressBackground: {
+    backgroundColor: "#00acc1"
   }
 });
 
-const MemoBox = props => {
+const MemoCardBox = props => {
   const { classes, className, content, ...other } = props;
   return (
     <div>
-      <div style={{ height: "2px", backgroundColor: "#00acc1" }} />
+      <div style={{ height: "3px", backgroundColor: "rgb(49, 49, 49)" }} />
       <SnackbarContent
-        className={classNames(className, classes.noMinWidth)}
+        className={classNames(className, classes.noMinWidth, classes.info)}
         aria-describedby="client-snackbar"
         message={
-          <span className={classes.message}>
-            <Note className={classNames(classes.icon)} />
+          <span id="client-snackbar" className={classes.message}>
+            <FolderIcon className={classNames(classes.icon)} />
             {content}
           </span>
         }
@@ -41,4 +46,4 @@ const MemoBox = props => {
   );
 };
 
-export default withStyles(styles1)(MemoBox);
+export default withStyles(styles1)(MemoCardBox);
