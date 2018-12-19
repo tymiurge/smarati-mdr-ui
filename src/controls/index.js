@@ -1,4 +1,5 @@
-import MemoCard from "./MemoCard";
-import MemoCardsBox from "./MemoCardsBox";
+import MemoCard from "./MemoCard.jsx";
+import MemoCardsBox from "./MemoCardsBox.jsx";
+import CardsGrid from "./CardsGrid.jsx";
 
-export { MemoCard, MemoCardsBox };
+export { MemoCard, MemoCardsBox, CardsGrid };
